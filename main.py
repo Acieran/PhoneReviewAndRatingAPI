@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+import kagglehub
 
 app = FastAPI()
 
@@ -11,5 +12,12 @@ async def root():
 @app.get("/hello/{name}")
 async def say_hello(name: str):
     return {"message": f"Hello {name}"}
+
+
+
+# Download latest version
+path = kagglehub.dataset_download("jacksondivakarr/phone-classification-dataset")
+
+print("Path to dataset files:", path)
 
 
