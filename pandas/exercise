@@ -17,14 +17,24 @@ Exercises:
 
 1. Series Creation and Basic Operations:
 
-1.1 Series from List: Create a Pandas Series named fruits from the following list: ['apple', 'banana', 'cherry', 'date'].
-1.2 Series with Index: Create a Pandas Series named temperatures from the following list: [25, 28, 30, 26]. Assign the index to be: ['Mon', 'Tue', 'Wed', 'Thu'].
-1.3 Series Access: From the temperatures Series, print the temperature for ‘Wed’.
-1.4 Series Slicing: From the temperatures Series, create a new Series called weekend_temperatures containing the temperatures for ‘Sat’ and ‘Sun’. (Hint: Add the weekend days with NaN temps and then use .loc).
-1.5 Series Arithmetic: Create a new Series called fahrenheit_temperatures by converting the temperatures Series to Fahrenheit (formula: F = C * 9/5 + 32).
+1.1 Series from List: Create a Pandas Series named fruits from
+    the following list: ['apple', 'banana', 'cherry', 'date'].
+1.2 Series with Index: Create a Pandas Series named temperatures
+    from the following list: [25, 28, 30, 26]. Assign the index to
+    be: ['Mon', 'Tue', 'Wed', 'Thu'].
+1.3 Series Access: From the temperatures Series, print the
+    temperature for ‘Wed’.
+1.4 Series Slicing: From the temperatures Series, create a new
+    Series called weekend_temperatures containing the temperatures
+    for ‘Sat’ and ‘Sun’. (Hint: Add the weekend days with NaN temps
+    and then use .loc).
+1.5 Series Arithmetic: Create a new Series called
+    fahrenheit_temperatures by converting the temperatures Series to
+    Fahrenheit (formula: F = C * 9/5 + 32).
 2. DataFrame Creation:
 
-2.1 DataFrame from Dictionary: Create a Pandas DataFrame named student_data from the following dictionary:
+2.1 DataFrame from Dictionary: Create a Pandas DataFrame named
+student_data from the following dictionary:
 
 data = {
     'Name': ['Alice', 'Bob', 'Charlie', 'David'],
@@ -33,8 +43,9 @@ data = {
     'Grade': [85, 92, 78, 95]
 }
 
-python
-2.2 DataFrame from List of Lists: Create a Pandas DataFrame named employee_data from the following list of lists. Provide column names: ['ID', 'Name', 'Department', 'Salary'].
+2.2 DataFrame from List of Lists: Create a Pandas DataFrame named
+    employee_data from the following list of lists. Provide column
+    names: ['ID', 'Name', 'Department', 'Salary'].
 
 data = [
     [1, 'Emily', 'Marketing', 60000],
@@ -42,21 +53,37 @@ data = [
     [3, 'Grace', 'IT', 80000]
 ]
 
-python
-2.3 DataFrame from NumPy array: Create a DataFrame named random_data with 5 rows and 3 columns using np.random.randn(5, 3). Assign column names: ['A', 'B', 'C'].
+2.3 DataFrame from NumPy array: Create a DataFrame named
+    random_data with 5 rows and 3 columns using
+    np.random.randn(5, 3). Assign column names: ['A', 'B', 'C'].
 
 3. DataFrame Basic Operations:
 
-3.1 DataFrame Head/Tail: Print the first 2 rows and the last 1 row of the student_data DataFrame.
-3.2 DataFrame Info: Print the summary information (using .info()) about the student_data DataFrame. What are the data types of each column?
-3.3 DataFrame Describe: Print the descriptive statistics (using .describe()) of the student_data DataFrame. What does this tell you about the numerical columns?
-3.4 Column Selection: Select and print only the ‘Name’ and ‘Age’ columns from the student_data DataFrame.
-3.5 Row Selection (Filtering): Select and print only the rows from the student_data DataFrame where the ‘Age’ is greater than 25.
-3.6 Add a New Column: Add a new column called ‘Passed’ to the student_data DataFrame. The ‘Passed’ column should be True if the ‘Grade’ is 70 or higher, and False otherwise.
-3.7 Drop a Column: Remove the ‘City’ column from the student_data DataFrame.
+3.1 DataFrame Head/Tail: Print the first 2 rows and the last 1
+    row of the student_data DataFrame.
+3.2 DataFrame Info: Print the summary information (using .info())
+    about the student_data DataFrame. What are the data types of
+    each column?
+3.3 DataFrame Describe: Print the descriptive statistics
+    (using .describe()) of the student_data DataFrame. What does
+    this tell you about the numerical columns?
+3.4 Column Selection: Select and print only the ‘Name’ and ‘Age’
+    columns from the student_data DataFrame.
+3.5 Row Selection (Filtering): Select and print only the rows
+    from the student_data DataFrame where the ‘Age’ is greater
+    than 25.
+3.6 Add a New Column: Add a new column called ‘Passed’ to the
+    student_data DataFrame. The ‘Passed’ column should be True
+    if the ‘Grade’ is 70 or higher, and False otherwise.
+3.7 Drop a Column: Remove the ‘City’ column from the student_data
+    DataFrame.
+
+
 4. DataFrame Handling Missing Data:
 
-4.1 Create DataFrame with NaN: Create a DataFrame named sales_data with the following data. Note the missing values (represented as None or np.nan).
+4.1 Create DataFrame with NaN: Create a DataFrame named
+    sales_data with the following data. Note the missing values
+    (represented as None or np.nan).
 
 data = {
     'Product': ['A', 'B', 'C', 'D', 'E'],
@@ -64,22 +91,45 @@ data = {
     'Region': ['North', 'South', 'East', None, 'West']
 }
 
-python
-4.2 Check for NaN: Print the number of missing values in each column of the sales_data DataFrame using .isnull().sum().
+4.2 Check for NaN: Print the number of missing values in each
+column of the sales_data DataFrame using .isnull().sum().
 
-4.3 Fill NaN: Fill the missing values in the ‘Sales’ column of the sales_data DataFrame with the mean of the non-missing sales values.
+4.3 Fill NaN: Fill the missing values in the ‘Sales’ column of
+the sales_data DataFrame with the mean of the non-missing sales
+values.
 
-4.4 Drop NaN: Remove any rows from the sales_data DataFrame that have missing values in any column.
+4.4 Drop NaN: Remove any rows from the sales_data DataFrame that
+    have missing values in any column.
 
 5. DataFrame Operations:
 
-5.1 Applying Functions: Create a function called grade_category that takes a grade as input and returns: ‘Excellent’ if grade >= 90, ‘Good’ if grade >= 80, ‘Average’ if grade >= 70, and ‘Poor’ otherwise. Apply this function to the ‘Grade’ column of the student_data DataFrame (from previous exercises) to create a new column called ‘Category’.
-5.2 Grouping: Create a new DataFrame that shows the average age of students for each city in the student_data DataFrame. (Use .groupby()).
-5.3 Value Counts: Determine the number of students in each grade category (‘Excellent’, ‘Good’, etc.) using .value_counts() on the ‘Category’ column.
+5.1 Applying Functions: Create a function called grade_category
+    that takes a grade as input and returns:
+    ‘Excellent’ if grade >= 90, ‘Good’ if grade >= 80,
+    ‘Average’ if grade >= 70, and ‘Poor’ otherwise.
+    Apply this function to the ‘Grade’ column of the student_data
+    DataFrame (from previous exercises) to create a new column
+    called ‘Category’.
+5.2 Grouping: Create a new DataFrame that shows the average age
+    of students for each city in the student_data DataFrame.
+    (Use .groupby()).
+5.3 Value Counts: Determine the number of students in each grade
+    category (‘Excellent’, ‘Good’, etc.) using .value_counts()
+    on the ‘Category’ column.
+
+
 Bonus Challenges:
 
-Merge/Join: Create two DataFrames representing customer information (ID, Name, City) and order information (ID, CustomerID, OrderDate, Amount). Merge these DataFrames based on CustomerID to create a new DataFrame that combines customer and order details.
-Time Series: Create a DataFrame with a DatetimeIndex representing daily dates for a month. Add a column with random sales numbers for each day. Calculate the 7-day rolling average of the sales numbers.
+Merge/Join: Create two DataFrames representing customer
+    information (ID, Name, City) and order information (ID,
+    CustomerID, OrderDate, Amount). Merge these DataFrames based
+    on CustomerID to create a new DataFrame that combines customer
+    and order details.
+Time Series: Create a DataFrame with a DatetimeIndex representing
+    daily dates for a month. Add a column with random sales
+    numbers for each day. Calculate the 7-day rolling average of
+    the sales numbers.
+
 Tips for Success:
 
 Refer to the “10 Minutes to Pandas” tutorial frequently. It’s a great resource for remembering syntax and functionality.
