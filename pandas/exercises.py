@@ -57,3 +57,15 @@ sales_data = pd.DataFrame(data = {
     'Sales': [100, 150, None, 200, 120],
     'Region': ['North', 'South', 'East', None, 'West']
 })
+print(sales_data)
+print("4.2 - \n")
+print(sales_data.isnull().sum())
+print("4.3 - \n")
+sales_data['Sales'] = sales_data['Sales'].fillna(sales_data['Sales'].mean())
+print(sales_data)
+print("4.4 - \n")
+sales_data.dropna(inplace=True)
+
+
+print("5.1 - \n")
+
